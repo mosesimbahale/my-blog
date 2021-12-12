@@ -30,7 +30,8 @@ twitter_username: Moses11113538
 github_username:  mosesimbahale
 
 # Build settings
-theme: minima
+#emoved minima theme as it is regular
+#theme: minima
 plugins:
   - jekyll-feed
 
