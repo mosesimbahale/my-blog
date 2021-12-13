@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Artifiaial intelligence in a nutshell"
+title: "Artificial intelligence in a nutshell"
 date: 2021-12-14 10:30:35 
 category: tech
 ---

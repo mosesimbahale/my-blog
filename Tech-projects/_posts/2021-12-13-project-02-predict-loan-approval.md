@@ -2,7 +2,7 @@
 layout: post
 title:  "PROJECT 02: Loan approval prediction"
 date:   2021-12-13 20:48:35 
-category: tech
+category: projects
 ---
 
 
@@ -14,5 +14,5 @@ The company wants to automate the loan eligibility process (real time) based on 
 
 ### Dataset:
 
-Position_Salaries.csv, you can find it on 
+train.csv, you can find it on 
 [github.](https://github.com/mosesimbahale/position-salary-prediction-ML/blob/main/position_salaries.csv) 

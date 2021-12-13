@@ -2,7 +2,7 @@
 layout: post
 title:  "Machine Learning in a nut shell"
 date:   2021-12-12 11:30:35 
-category: projects
+category: tech
 ---
 
 ### Simple Definition -
