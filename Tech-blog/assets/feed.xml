@@ -2,8 +2,6 @@
 
 ---
 <?xml version="1.0" encoding="utf-8"?>
-
-<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <link href ="{{- site.url -}}{{-site.baseurl -}}/Tech-blog/feed.xml" rel ="self" type="application/atom+xml"/>
     <link href ="{{- site.url -}}{{- site.baseurl -}}/My-blog/" rel="alternative" type="text/html"/>
