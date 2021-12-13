@@ -1,0 +1,400 @@
+---
+layout: post
+title:  "PROJECT 01: Predict the salary of an employee at a given position in an organization using polynomial regression"
+date:   2021-12-12 20:48:35 +0300
+category: projects
+---
+
+
+### Model objective:
+Assuming that we have the table that the HR team of a company uses to determine what salary to offer to a new employee. We want to build a model to predict what salary we should offer a new employee.
+
+
+
+## Dataset:
+
+Position_Salaries.csv, you can find it on 
+[github.](https://github.com/mosesimbahale/position-salary-prediction-ML/blob/main/position_salaries.csv) 
+
+It has three columns — “position, level, and salary” and describes the approximate salary range for the employee based on what level he/she falls under in an organization. For example, if an employee is a manager, he falls in Level 4 and should get around $80,000.
+
+
+### Getting started->
+
+### step01. SETUP
+``` 
+# Python ≥3.5 is required
+import sys
+assert sys.version_info >= (3, 5)
+
+# Scikit-Learn ≥0.20 is required
+import sklearn
+assert sklearn.__version__ >= "0.20"
+
+# Common imports
+import numpy as np
+import os
+
+# To plot pretty figures
+%matplotlib inline
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+mpl.rc('axes', labelsize=14)
+mpl.rc('xtick', labelsize=12)
+mpl.rc('ytick', labelsize=12)
+```
+
+
+### step02. LOADING THE DATASET
+```
+from google.colab import drive
+drive.mount('/content/drive')
+
+import pandas as pd
+path ="/content/drive/MyDrive/path/datasets/position_salaries.csv"
+df_bonus = pd.read_csv(path)# Dataset is now stored in a Pandas Dataframe
+```
+### Now X is the independent variable which is the “Level” and y is the dependent variable which is the “Salary”.
+So for X, we specify: X = dataset.iloc[:, 1:2].values and for y, we specify too dataset.iloc[:, 2].values
+
+```
+import pandas as pd
+dataset = pd.read_csv("/content/drive/MyDrive/Machine/datasets/position_salaries.csv")
+X = dataset.iloc[:, 1:2].values
+y = dataset.iloc[:, 2].values
+```
+
+### step03. VISUALIZING THE DATASET
+
+```
+import pandas 
+
+df = pandas.DataFrame(columns = ['Position','Level','Salary'])
+
+pandas.read_csv('/content/drive/MyDrive/Machine/datasets/position_salaries.csv')
+
+```
+![image of visualization](https://user-images.githubusercontent.com/42868535/145440239-aafeafb7-5298-4c77-9ca8-b3f8025b0c6f.png)
+
+
+
+### step04. SPLIT DATASET INTO TRAINING AND TEST SET
+Next we have to split the dataset into training and testing. We will use the training dataset for training the model and then check the performance of the model on the test dataset.
+For this we will use the train_test_split method from library model_selection
+We are providing a test_size of 1/3 which means test set will contain 10 observations and training set will contain 20 observations
+The random_state=0 is required only if you want to compare your results with mine.
+
+```
+# Step 2: Split data into training and testing
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=1/3, random_state=0)
+```
+
+
+
+### step05. FITTING LINEAR REGRESSION TO TRAIN SET
+```
+from sklearn.linear_model import LinearRegression
+lin_reg = LinearRegression()
+lin_reg.fit(X,y)
+```
+
+
+
+### step06. VISUALIZING LINEAR REGRESSION RESULTS
+```
+import matplotlib.pyplot as plt
+
+plt.scatter(X,y, color="red")
+plt.plot(X, lin_reg.predict(X))
+plt.title("Linear Regression")
+plt.xlabel("Level")
+plt.ylabel("Salary")
+plt.show()
+```
+
+![image](https://user-images.githubusercontent.com/42868535/145440691-315a35df-aa26-4af6-9a1e-1df2294a1a90.png)
+
+
+If we look at the graph above, we can see that a person at level 4.5 should be offered a salary of around $100k.
+let's predict and see
+```
+lin_reg.predict([[4.5]])
+```
+output: array([168621.21212121])
+
+We can see that the predicton is way off as it predicts $168k.
+
+
+###Polynomial regression:
+
+### CONVERTING X TO POLYNOMIAL FORMAT.
+
+For Polynomial Regression, we need to transform our matrix X to X_poly where X_poly will contain X to the power of n — depending upon the degree we choose. If we choose degree 2, then X_poly will contain X and X to the power 2. If we choose degree 3, then X_poly will contain X, X to the power 2 and X to the power 3. We will be using the PolynomialFeatures class from the sklearn.preprocessing library for this purpose. 
+
+
+When we create an object of this class — we have to pass the degree parameter. Let’s begin by choosing degree as 2. Then we call the fit_transform method to transform matrix X.
+
+```
+from sklearn.preprocessing import PolynomialFeatures
+poly_reg = PolynomialFeatures(degree=4)
+X_poly = poly_reg.fit_transform(X)
+```
+ Taking a look at (X_poly).
+ 
+ ```
+df = pd.DataFrame (X_poly)
+index=['0','1']
+df
+ ```
+ 
+`Output:` 
+ 
+ ![image](https://user-images.githubusercontent.com/42868535/145441754-80c6a67c-e6da-48ec-823c-3d896f257bc4.png)
+
+ 
+
+### step07. FITTING POLYNOMIAL REGRESSION
+Now we will create a new linear regression object called lin_reg_2 and pass X_poly to it instead of X that we passed in Step 2.
+
+
+```
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(X_poly,y)
+```
+output: LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False)
+
+
+### step08. VISUALIZING POLYNOMIAL REGRESSION RESULTS and PREDICTING IT'S RESULTS
+
+```
+# degree to 2
+
+#  Convert X to polynomial format
+from sklearn.preprocessing import PolynomialFeatures
+poly_reg = PolynomialFeatures(degree=2)
+X_poly = poly_reg.fit_transform(X)
+
+ # Passing X_poly to LinearRegression
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(X_poly,y)
+
+# Visualize Poly Regression Results
+plt.scatter(X,y, color="red")
+plt.plot(X, lin_reg_2.predict(poly_reg.fit_transform(X)))
+plt.title("Poly Regression Degree 2")
+plt.xlabel("Level")
+plt.ylabel("Salary")
+plt.show()
+
+# Polynomial Regression prediction
+new_salary_pred = lin_reg_2.predict(poly_reg.fit_transform([[4.5]]))
+print('The predicted salary of a person at 4.5 Level is ',new_salary_pred)
+```
+
+`Output:`
+
+![image](https://user-images.githubusercontent.com/42868535/145442317-0aa80c0b-eafd-466d-a21a-1231a652c30b.png)
+
+
+
+### step09. CHANGING DEGREE FROM 2 UPTO 8 and TO SEE IF WE GET BETTER RESULTS
+
+
+```
+# Change degree to 3 
+
+# Convert X to polynomial format
+from sklearn.preprocessing import PolynomialFeatures
+poly_reg = PolynomialFeatures(degree=3)
+X_poly = poly_reg.fit_transform(X)
+
+ # Passing X_poly to LinearRegression
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(X_poly,y)
+
+# Visualize Poly Regression Results
+plt.scatter(X,y, color="red")
+plt.plot(X, lin_reg_2.predict(poly_reg.fit_transform(X)))
+plt.title("Poly Regression Degree 3")
+plt.xlabel("Level")
+plt.ylabel("Salary")
+plt.show()
+
+# Polynomial Regression prediction
+new_salary_pred = lin_reg_2.predict(poly_reg.fit_transform([[4.5]]))
+print('The predicted salary of a person at 4.5 Level is ',new_salary_pred)
+```
+`Output:`
+
+![image](https://user-images.githubusercontent.com/42868535/145444075-196eced0-5f26-4d32-b13c-3c65a0dc9c3b.png)
+
+
+
+```
+# Change degree to 4 
+
+# Convert X to polynomial format
+from sklearn.preprocessing import PolynomialFeatures
+poly_reg = PolynomialFeatures(degree=4)
+X_poly = poly_reg.fit_transform(X)
+
+ # Passing X_poly to LinearRegression
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(X_poly,y)
+
+# Visualize Poly Regression Results
+plt.scatter(X,y, color="red")
+plt.plot(X, lin_reg_2.predict(poly_reg.fit_transform(X)))
+plt.title("Poly Regression Degree 4")
+plt.xlabel("Level")
+plt.ylabel("Salary")
+plt.show()
+
+# Polynomial Regression prediction
+new_salary_pred = lin_reg_2.predict(poly_reg.fit_transform([[4.5]]))
+print('The predicted salary of a person at 4.5 Level is ',new_salary_pred)
+
+```
+
+`Output:`
+
+![image](https://user-images.githubusercontent.com/42868535/145444238-73d4ee2d-8e12-4b8d-a210-4902846d533f.png)
+
+
+
+
+```
+# Change degree to 5
+
+# Convert X to polynomial format
+from sklearn.preprocessing import PolynomialFeatures
+poly_reg = PolynomialFeatures(degree=5)
+X_poly = poly_reg.fit_transform(X)
+
+ # Passing X_poly to LinearRegression
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(X_poly,y)
+
+# Visualize Poly Regression Results
+plt.scatter(X,y, color="red")
+plt.plot(X, lin_reg_2.predict(poly_reg.fit_transform(X)))
+plt.title("Poly Regression Degree 5")
+plt.xlabel("Level")
+plt.ylabel("Salary")
+plt.show()
+
+# Polynomial Regression prediction
+new_salary_pred = lin_reg_2.predict(poly_reg.fit_transform([[4.5]]))
+print('The predicted salary of a person at 4.5 Level is ',new_salary_pred)
+
+```
+`Output:`
+
+![image](https://user-images.githubusercontent.com/42868535/145444340-0f17674d-18a7-46a9-a06e-58a96be07d94.png)
+
+
+
+```
+# Change degree to 6
+
+# Convert X to polynomial format
+from sklearn.preprocessing import PolynomialFeatures
+poly_reg = PolynomialFeatures(degree=6)
+X_poly = poly_reg.fit_transform(X)
+
+ #  Passing X_poly to LinearRegression
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(X_poly,y)
+
+# Visualize Poly Regression Results
+plt.scatter(X,y, color="red")
+plt.plot(X, lin_reg_2.predict(poly_reg.fit_transform(X)))
+plt.title("Poly Regression Degree 6")
+plt.xlabel("Level")
+plt.ylabel("Salary")
+plt.show()
+
+# Polynomial Regression prediction
+new_salary_pred = lin_reg_2.predict(poly_reg.fit_transform([[4.5]]))
+print('The predicted salary of a person at 4.5 Level is ',new_salary_pred)
+```
+`Output:`
+
+![image](https://user-images.githubusercontent.com/42868535/145444496-b7e371cc-4f76-4ec2-ba57-d42ac3b956d2.png)
+
+
+
+```
+# Change degree to 7
+
+# Convert X to polynomial format
+from sklearn.preprocessing import PolynomialFeatures
+poly_reg = PolynomialFeatures(degree=7)
+X_poly = poly_reg.fit_transform(X)
+
+ #  Passing X_poly to LinearRegression
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(X_poly,y)
+
+# Visualize Poly Regression Results
+plt.scatter(X,y, color="red")
+plt.plot(X, lin_reg_2.predict(poly_reg.fit_transform(X)))
+plt.title("Poly Regression Degree 7")
+plt.xlabel("Level")
+plt.ylabel("Salary")
+plt.show()
+
+# Polynomial Regression prediction
+new_salary_pred = lin_reg_2.predict(poly_reg.fit_transform([[4.5]]))
+print('The predicted salary of a person at 4.5 Level is ',new_salary_pred)
+
+```
+
+`Output:`
+
+![image](https://user-images.githubusercontent.com/42868535/145444673-c2d9e82d-829b-4581-95a5-f000287c3fdf.png)
+
+
+
+```
+# Change degree to 8
+
+# Convert X to polynomial format
+from sklearn.preprocessing import PolynomialFeatures
+poly_reg = PolynomialFeatures(degree=8)
+X_poly = poly_reg.fit_transform(X)
+
+ #  Passing X_poly to LinearRegression
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(X_poly,y)
+
+# Visualize Poly Regression Results
+plt.scatter(X,y, color="red")
+plt.plot(X, lin_reg_2.predict(poly_reg.fit_transform(X)))
+plt.title("Poly Regression Degree 8")
+plt.xlabel("Level")
+plt.ylabel("Salary")
+plt.show()
+
+# Polynomial Regression prediction
+new_salary_pred = lin_reg_2.predict(poly_reg.fit_transform([[4.5]]))
+print('The predicted salary of a person at 4.5 Level is ',new_salary_pred)
+```
+
+`Output:`
+
+![image](https://user-images.githubusercontent.com/42868535/145444786-f70a2843-ec20-4eff-b6b0-71d8431de8dc.png)
+
+
+
+### CONCLUSION
+
+So in this case by using Linear Regression — at level 4.5 we got a prediction of $168k and by using polynomial regression we got a prediction of 94k which isn't bad.
+
+Model accuracy: 98.908%
+
+
+Full source code can be found [here.](https://github.com/mosesimbahale/position-salary-prediction-ML/blob/main/positon_salary_predictor0.py)
+
+
