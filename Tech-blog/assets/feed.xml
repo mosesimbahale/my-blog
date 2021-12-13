@@ -24,7 +24,8 @@
                 {%- endif- %}</name>
     </author>
 
-    {%- for post in site.posts limit: 20 -%}{%- if post.category=="tech" -%}
+    {%- for post in site.posts limit: 20 -%}
+    {%- if post.category=="tech" -%}
         <entry>
 
             <title>{{- post.title -}}</title>
@@ -40,6 +41,7 @@
 
         </entry>
 
-    {%- endif- % }{%- endfor- %}
+    {%- endif -%}
+    {%- endfor -%}
 
     </feed>
