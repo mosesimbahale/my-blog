@@ -11,7 +11,9 @@ Machine Learning is getting computers to program themselves. If programming is a
 ### CLASSIFICATIONS OF MACHINE LEARNING ON BROAD CATEGORIZATION.
 1. Whether they are trained with human supervision.
  -Supervised Learning vs Unsupervised Learning ->
+ 
  -Semi-supervised Learning vs Reinforcement Learning
+ 
 2. Whether they can learn immediately.
  -Online vs Batch learning
 3. Whether they learn simply by comparing data points or instead detect patterns in the training data and build a productive model.
