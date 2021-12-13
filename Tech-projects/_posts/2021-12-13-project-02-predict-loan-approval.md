@@ -15,4 +15,4 @@ The company wants to automate the loan eligibility process (real time) based on 
 ### Dataset:
 
 train.csv, you can find it on 
-[github.](https://github.com/mosesimbahale/position-salary-prediction-ML/blob/main/position_salaries.csv) 
+[github.](https://github.com/mosesimbahale/ML-Projects/blob/main/Loan%20payments%20data.csv) 
