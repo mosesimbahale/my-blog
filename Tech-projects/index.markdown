@@ -3,6 +3,6 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home-projects
-title: "Tech Blog"
+title: "Tech Projects"
 category: projects
 ---
