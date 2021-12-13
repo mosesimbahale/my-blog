@@ -14,5 +14,5 @@ The company wants to automate the loan eligibility process (real time) based on 
 
 ### Dataset:
 
-train.csv, you can find it on 
+Loan payment data.csv, you can find it on 
 [github.](https://github.com/mosesimbahale/ML-Projects/blob/main/Loan%20payments%20data.csv) 
