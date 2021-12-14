@@ -262,10 +262,75 @@ plt.scatter(x, y);
 With this data, you can use the steps outlined for the Scikit-Learn estimator API above: 
 
 
-1. Choose a class of model. 
-2. Choose model hyper parameters. 
-3. Arrange data into a features matrix and target vector. 
-4. Fit the model to your data. 
-5. Predict labels for unknown data. 
-6. Check the results of model fitting to know whether the model is satisfactory 
+1. **Choose a class of model.**  In Scikit-Learn, every class of model is represented by a Python class. E.g., for a simple linear regression model, you import the linear regression class as shown below: `In[2]: from sklearn.linear_model import LinearRegression` 
 
+2. **Choose model hyper parameters.** Depending on the model class you are working with, you might need to consider one or more of the following options:
+- Would you like to fit for the offset (i.e., intercept)?  
+- Use fit_intercept  (True by default) that decides whether to calculate the intercept 푏₀ (True) or consider it equal to zero (False).
+- Would you like the model to be normalized? Use normalize (False by default) that decides whether to normalize the input variables (True) or not (False).  
+- Would we like to pre-process the features to add model flexibility? 
+- What degree of regularization would we like to use in the model?  
+- How many model components would we like to use?
+ 
+These are important choices that must be made once the model class is selected. These choices are often represented as hyperparameters, or parameters that must be set before the model is fit to data. This is done when you choose hyperparameters by passing values at model instantiation. For  instance, you can specify you would like to fit the intercept using the fit_intercept hyperparameter: 
+
+``` 
+In[3]: 
+model = LinearRegression(fit_intercept=True)
+Model
+Out[3]: LinearRegression() 
+```
+>Notice that when the model is instantiated, the only action is the storing of the hyperparameter values. In particular, the model has not yet been applied to any data 
+
+3. **Arrange data into a features matrix and target vector.** 
+Scikit-Learn data representation, requires a two-dimensional features matrix and a one-dimensional target array. The target variable y is in the correct form (length-n_sample array), but you need to reshape data x into one-dimensional array i.e. make it a matrix of size [n_samples, n_features]. 
+
+``` 
+In[4]:X = x[:, np.newaxis] 
+X.shape 
+Out[4]: (40, 1) 
+```
+
+4. **Fit the model to your data.** 
+Apply the model to data. This can be done with the fit() method of the model as follows: 
+
+```
+In[5]: model.fit(X, y) 
+Out[5]: 
+LinearRegression()
+```
+The fit() command causes a number of model-dependent internal computations to take place, and the results of these computations are stored in model specific attributes. In this linear model, we have the following: 
+
+```
+In[6]: model.coef_ 
+Out[6]: array([2.0133901]) 
+In[7]: model.intercept_ 
+Out[7]: -1.139509001948376
+```
+These two parameters represent the slope and intercept of the simple linear fit to the data.
+
+
+5. **Predict labels for unknown data.**
+Once the model is trained, the main task of supervised machine learning is to evaluate it based on what it says about new data that was not part of the training set. In Scikit-Learn, this can done by using the predict() method. In this example, the “new data” will be a grid of x values, and we will need to know what y values the model predicts: 
+`In[8]: xfit = np.linspace(-1, 11, 40) `
+
+Change the x values into a [n_samples, n_features] features matrix format and which can be feed to the model as shown below: 
+```
+In[9]: Xfit = xfit[:, np.newaxis] 
+yfit = model.predict(Xfit)
+```
+Finally, visualize the results by plotting first the raw data, and then the model fit: 
+
+```
+In[10]: plt.scatter(x, y) 
+plt.plot(xfit, yfit, color='red') 
+plt.xlabel("xfit") 
+plt.ylabel("yfit"); 
+```
+
+![image](https://user-images.githubusercontent.com/42868535/146055435-0228643f-3dc4-4a95-9e98-024cda944566.png)
+
+
+
+
+6. Check the results of model fitting to know whether the model is satisfactory 
