@@ -52,13 +52,19 @@ Arrays can be created in multiple ways in numpy. A single dimensional array can 
 
 The shape attribute of the array object returns the size of each dimension in the form of (row, columns), while the size returns the total size of the array: 
 
-> In [4]: arr.shape 
+>  In [4]: arr.shape 
 >
-> Out[4]: (5,) 
+>  Out[4]: (5,) 
 
 Unlike Python lists, NumPy arrays can explicitly be multidimensional. A multidimensional array is created as shown below: 
 
-> In[5]: import numpy as np
->         x = np.array([[1, 2, 3], [4, 5, 6]]) 
->         print("x:\n{}".format(x)) 
+> ' In[5]: import numpy as np
+> '        x = np.array([[1, 2, 3], [4, 5, 6]]) 
+> '        print("x:\n{}".format(x)) 
 
+> ' Out[5]: 
+> '    x: [[1 2 3] 
+> '   [4 5 6]] 
+
+***creating arrays from scratch***
+For large arrays it is more efficient to create arrays from scratch using a bunch of special functions built in NumPy as shown in the following examples: 
