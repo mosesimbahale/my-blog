@@ -187,7 +187,6 @@ print("NumPy array:\n{}".format(eye))
 
 It produces the following output
 ```
- 
 Out[2]:
 SciPy sparse CSR matrix:
 (0, 0) 1.0
@@ -201,11 +200,58 @@ SciPy sparse CSR matrix:
 Scikit-learn is one of the most important and indispensable Python frameworks for Data Science and Machine Learning in Python. It is built on top of the NumPy and SciPy scientific Python libraries and implements a wide range of Machine Learning algorithms covering major areas of Machine Learning like classification, clustering, regression, etc. All the mainstream Machine Learning algorithms like support vector machines, logistic regression, random forests, K-means clustering, hierarchical clustering, etcs are implemented efficiently in this library. Perhaps this library forms the foundation of applied and practical Machine Learning. Besides this, its easy-to-use API and code design patterns have been widely adopted across other frameworks. 
 
 
+# DATA REPRESENTATION IN SCIKIT LEARN
+
+Machine learning is about creating models from data. It is important then to understand how data can be represented in order to be understood by the computer. The best way to think about data within Scikit-Learn is in terms of tables of data. 
 
 
+**Data as table** 
+A basic table is a two-dimensional grid of data, in which the rows represent individual elements of the dataset, and the columns represent quantities related to each of these elements. 
+
+#### Features matrix 
+
+The table layout makes the information to be represented as a two dimensional numerical array or matrix, which is called the features matrix. By convention, this features matrix is often stored in a variable named X. Generally, features matrix is assumed to be two-dimensional, with shape [n_samples, n_features], and is most often contained in a NumPy array or a Pandas DataFrame, though some Scikit-Learn models also accept SciPy sparse matrices.  
+The samples (rows) always refer to the individual objects described by the dataset. The sample might be, a person, a document, an image, a sound file, a video, or anything else that can be described with a set of quantitative measurements. 
+The features (columns) refer to the distinct observations that describe each sample in a quantitative manner. Features are generally real-valued, but may be Boolean or discrete-valued in some cases. 
+
+#### Target array 
+
+In addition to the feature matrix X, you also need to work with a label or target array that by convention is called y. This target array is usually one dimensional, with length n_samples, and can be contained in a NumPy array or Pandas Series. It may have continuous numerical values, or discrete classes/labels. While some Scikit-Learn estimators do handle multiple target values in the form of a two-dimensional [n_samples, n_targets] target array, you will be working with the a one-dimensional target array. 
+
+Notice that the distinguishing feature of the target array is the quantity that needs to be predicted from the data (i.e dependent variable). 
+
+#### Scikit-Learn’s Estimator API 
+
+Every machine learning algorithm in Scikit-Learn is implemented via the Estimator API, which provides a consistent interface for a wide range of machine learning applications. 
+
+#### Basics of the API
+The following are the steps commonly used in the Scikit-Learn estimator API: 
+i). Choose a class of model by importing the appropriate estimator class from Scikit-Learn. 
+ii). Choose model hyperparameters by instantiating the class with desired values. 
+iii). Arrange data into a features matrix and target vector 
+iv). Fit the model to your data by calling the fit() method of the model instance. 
+v). Apply the model to new data:  
+
+- For supervised learning, you predict labels for unknown data using the predict() method. 
+- For unsupervised learning, you transform or infer properties of the data using the transform() or predict() method.
+
+vi). Check the results of model fitting to know whether the model is satisfactory 
 
 
+# Simple linear regression 
 
+Linear regression involves coming up with a straight-line fit to data. A straight-line fit is a model of the form     y = ax + b where a is commonly known as the slope, and b is commonly known as the intercept. 
 
+**Example**
+Consider a simple linear regression that involves fitting a line to x, y data. Use the following data sample:
 
-
+```
+In[1]: import matplotlib.pyplot as plt
+import numpy as np 
+rng = np.random.RandomState(42) 
+x = 10 * rng.rand(40) 
+y = 2 * x - 1 + rng.randn(40)
+print (x) 
+print (y) 
+plt.scatter(x, y);
+```
