@@ -255,3 +255,9 @@ print (x)
 print (y) 
 plt.scatter(x, y);
 ```
+
+![image](https://user-images.githubusercontent.com/42868535/146052664-4d14d97f-066c-436f-8bd6-4eb29f1fec58.png)
+
+
+
+
