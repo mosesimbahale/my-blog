@@ -21,7 +21,7 @@ computing as well as scientific computing. Moreover it is being continuously upg
 - Python has packages which can directly use the code from other languages like Java or C. This helps in optimizing the code performance by using existing code of other languages, whenever it gives a better result. 
 
 
-### 'Python Machine Learning Ecosystem' 
+### Python Machine Learning Ecosystem 
 
 The Python machine learning ecosystem is a collection of libraries that enable the developers to extract and transform data, perform data wrangling operations, apply existing robust Machine Learning algorithms and also develop custom algorithms easily. These libraries include numpy, scipy, pandas, scikit-learn, statsmodels, tensorflow, keras, etc. The following is a description of these libraries: 
 
@@ -34,6 +34,7 @@ The Python machine learning ecosystem is a collection of libraries that enable t
 7. SCIKIT-LEARN: - used in machine learning i.e. used as a source for many machine learning algorithms and utilities 
 8. KERAS : - used for neural networks and deep learning 
 
+  
 
 
 
