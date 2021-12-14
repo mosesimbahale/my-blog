@@ -122,10 +122,83 @@ i) **List of Dictionaries to Dataframe:** This is one of the simplest methods to
 ii) **CSV Files to Dataframe** This is perhaps one of the most widely used ways of creating a dataframe. You can easily read a CSV, or any delimited file (like TSV), and convert it into a dataframe using pandas. The following is a sample slice of a CSV file containing the data of cities of the world from [here](http://simplemaps.com/data/world-cities.) 
 
 
+![image](https://user-images.githubusercontent.com/42868535/146045199-a0a60128-037e-45fd-9c7b-8987e8a71fb2.png)
+
+The data is obtained using the following code 
+
+![image](https://user-images.githubusercontent.com/42868535/146045308-a1aa2dc4-d0ea-4bbd-9142-6ea23a532220.png)
+
+**Databases to Dataframe**
+
+The most important data source for data scientists is the existing data sources used by their organizations. Relational databases (DBs) and data warehouses are the de facto standard of data storage 
+Data Science Programming~ Wainaina                                                                                                               Page 9 of 11 in almost all organizations. Pandas provides capabilities to connect to these databases directly, execute queries on them to extract data, and then convert the result of the query into a structured dataframe. The pandas.from_sql function combined with Python’s powerful database library implies that the task of getting data from DBs is simple and easy.  
+
+**Example**
+The following code is used read data from a Microsoft SQL Server database.
+
+```
+server = 'xxxxxxxx' # Address of the database server
+user = 'xxxxxx' # the username for the database server 
+password = 'xxxxx' # Password for the user
+database = 'xxxxx' # Database in which the table is present
+conn = pymssql.connect(server=server, user=user, password=password, 
+database=database)
+query = "select * from some_table" 
+df = pd.read_sql(query, conn) 
+```
+conn is an object used to identify the database server information and the type of database to pandas 
+
+4. Matplotlib 
+matplotlib is the primary scientific plotting library in Python. It provides functions for making publication-quality visualizations such as line charts, histograms, scatter plots, etc. Visualizing your data and different aspects of your analysis can give you important insights.   
+When working inside the Jupyter Notebook, you can show figures directly in the browser by using the %matplotlib notebook and %matplotlib inline commands. 
+
+**Example:**
+The following code produces the plot
+
+```
+In [1]: 
+%matplotlib inline
+import matplotlib.pyplot as plt 
+#or you can use "from matplotlib import pyplot as plt"
+
+# Generate a sequence of numbers from -10 to 10 with 100 steps in between
+x = np.linspace(-10, 10, 100)
+# Create a second array using sine 
+y = np.sin(x) # The plot function makes a line chart of one array against another 
+plt.plot(x, y, marker="x") 
+```
+
+![image](https://user-images.githubusercontent.com/42868535/146046857-554371c5-fb92-45e2-9e87-9fe772fb2234.png)
 
 
 
+5. SciPy 
 
+SciPy is a collection of functions for scientific computing in Python. It provides, among other functionality, advanced linear algebra routines, mathematical function optimization, signal processing, special mathematical functions, and statistical distributions. scikit-learn draws from SciPy’s collection of functions for implementing its algorithms. One of the most important part of SciPy is scipy.sparse, which provides sparse matrices, which are another representation that is used for data in scikitlearn. Sparse matrices are used whenever we want to store a 2D array that contains mostly zeros. 
+
+```
+In[1]: 
+from scipy import sparse 
+# A 2D NumPy array with a diagonal of ones, and zeros everywhere else 
+eye = np.eye(4) 
+print("NumPy array:\n{}".format(eye)) 
+```
+
+
+It produces the following output
+```
+ 
+Out[2]:
+SciPy sparse CSR matrix:
+(0, 0) 1.0
+(1, 1) 1.0
+(2, 2) 1.0
+(3, 3) 1.0 
+```
+
+
+6. Scikit-learn 
+Scikit-learn is one of the most important and indispensable Python frameworks for Data Science and Machine Learning in Python. It is built on top of the NumPy and SciPy scientific Python libraries and implements a wide range of Machine Learning algorithms covering major areas of Machine Learning like classification, clustering, regression, etc. All the mainstream Machine Learning algorithms like support vector machines, logistic regression, random forests, K-means clustering, hierarchical clustering, etcs are implemented efficiently in this library. Perhaps this library forms the foundation of applied and practical Machine Learning. Besides this, its easy-to-use API and code design patterns have been widely adopted across other frameworks. 
 
 
 
