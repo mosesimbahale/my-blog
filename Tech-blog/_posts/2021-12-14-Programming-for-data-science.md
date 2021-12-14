@@ -334,3 +334,156 @@ plt.ylabel("yfit");
 
 
 6. Check the results of model fitting to know whether the model is satisfactory 
+
+Typically one evaluates the efficacy of the model by comparing its results to some known baseline.
+
+
+**Model Performance (Optimization)**
+The Goodness of fit determines how the line of regression fits the set of observations. This is achieved by using R-squared method (푅²), which is a statistical method that determines the goodness of fit. It measures the strength of the relationship between the dependent and independent variables on a scale of 0-100%.  The high value of R-square the less difference between the predicted values and actual values and hence represents a good model. It is also called a coefficient of determination, or coefficient of multiple determination. It is computed by using the score()function. 
+
+```
+In[11]: 
+r_sq = model.score(X, y) print('coefficient of determination:', 
+r_sq) 
+Out[11]: 
+coefficient of determination: 0.9780949186629684
+```
+
+**Cost function**
+The cost function is used to find the accuracy of the mapping function (hypothesis function). For Linear Regression, the Mean Squared Error (MSE) cost function is used. MSE is calculated as follows:
+
+![image](https://user-images.githubusercontent.com/42868535/146057647-38892b73-48b2-433b-9e94-3a1296d99724.png)
+
+Where,  
+n=Total number of observation/examples  
+yi = Actual value  
+(a1xi+a0)= Predicted value. 
+
+In Python, MSE is computed as follows: 
+
+```
+In[12]: 
+from sklearn import metrics 
+print('Mean Squared Error:', metrics.mean_squared_error(y, yfit)) 
+Out[12]: 
+Mean Squared Error: 85.25992237775259
+```
+**Multiple Linear Regressions (MLR)**
+MLR models linear relationship between a single dependent continuous variable and more than one independent variable E.g. Prediction of CO2 emission based on engine size and number of cylinders in a car. 
+
+**MLR equation**
+The target variable(Y) is a linear combination of multiple predictor variables x1, x2, x3, ...,xn. Since it is an enhancement of Simple Linear Regression, the same kind of equation is applied for the multiple linear regression as shown below:  
+
+![image](https://user-images.githubusercontent.com/42868535/146058314-8df1c10f-f264-42c3-932c-1d6dffb0db99.png)
+
+where,
+![image](https://user-images.githubusercontent.com/42868535/146058372-2a14c4e6-249b-41f6-9663-5ae63e0fda71.png)
+
+
+If there are just two independent variables, the estimated regression function is 푓(푥₁, 푥₂) = 푏₀ + 푏₁푥₁ + 푏₂푥₂. It represents a regression plane in a three-dimensional space. The goal of regression is to determine the values of the weights 푏₀, 푏₁, and 푏₂ such that this plane is as close as possible to the actual responses 
+
+**Multiple Linear Regression with scikit-learn** 
+Multiple linear regression is implemented using the same steps as simple regression. 
+
+- Choose a class of model by importing the appropriate estimator class from Scikit-Learn. 
+- Choose model hyperparameters by instantiating the class with desired values. 
+- Fit the model to your data by calling the fit() method of the model instance. 
+- Apply the model to new data 
+- Check the results of model fitting to know whether the model is satisfactory 
+
+***Example***
+
+Consider the following dataset 
+
+![image](https://user-images.githubusercontent.com/42868535/146058962-b00d545f-19a4-441e-acfa-1f706973536a.png)
+
+
+
+# Choose a class of model by importing the appropriate estimator class from Scikit-Learn. import numpy and sklearn.linear_model.LinearRegression and provide inputs and output: 
+
+In[1]: import numpy as np
+from sklearn.linear_model import LinearRegression 
+x = [[0, 1], [5, 1], [15, 2], [25, 5], [35, 11], [45, 15], [55, 34], 
+[60, 35]] 
+y = [4, 5, 20, 14, 32, 22, 38, 43] 
+x, y = np.array(x), np.array(y) print(x) print(y) 
+Out[1]:
+[[ 0  1]
+[ 5  1]
+[15  2]
+[25  5]
+[35 11]
+[45 15]
+[55 34]
+[60 35]]
+[ 4  5 20 14 32 22 38 43] 
+
+x is a two-dimensional array with two columns, while y is a one-dimensional array.  
+
+#  Choose model hyperparameters by instantiating the class with desired values. 
+
+
+`In[2]: model = LinearRegression() `
+
+
+#  Fit the model to your data by calling the fit() method of the model instance. 
+
+`In[3]: model.fit(x, y) `
+
+You can combine steps (ii) and (iii) as follows 
+
+`In[4]: model = LinearRegression().fit(x,y)`
+
+The result of this statement is the variable model referring to the object of type LinearRegression. It represents the regression model fitted with existing data
+
+Get results You can obtain the properties of the model the same way as in the case of simple linear regression: 
+
+```
+In[5]: print('intercept:', model.intercept_) 
+Out[5]: intercept: 5.5225792751981935 
+In[6]: print('slope:', model.coef_) 
+Out[6]: slope: [0.44706965 0.25502548]
+```
+
+intercept_ holds the bias b₀, while coef_ is an array containing b₁ and b₂ respectively. Notice that the intercept is approximately 5.52, and this is the value of the predicted response when x₁ = x₂ = 0. The increase of x₁ by 1 yields the rise of the predicted response by 0.45. Similarly, when x₂ grows by 1, the response rises by 0.26. 
+
+
+Apply the model to new data: Predictions work the same way as simple linear regression as shown below: 
+
+In[7]: y_pred = model.predict(x) 
+print('predicted response:', y_pred, sep='\n') 
+Out[7]:  predicted response: [5.77760476  8.012953   12.73867497 17.9744479  23.97529728    
+29.4660957 38.78227633 41.27265006] 
+
+This model can be applied to new data as well. First generate the data 
+
+```
+In[8]: x_new = np.arange(10).reshape((-1, 2)) 
+print(x_new) 
+Out[8]: 
+[[0 1] 
+[2 3] 
+[4 5] 
+[6 7] 
+[8 9]] 
+```
+
+The following is prediction using the new data. 
+
+In[9]: y_new = model.predict(x_new) 
+print(y_new) 
+Out[9]:  
+[ 5.77760476  7.18179502  8.58598528  9.99017554 11.3943658 ] 
+
+Check the results of model fitting to know whether the model is satisfactory The value of 푅² is obtained using .score()as follows:
+
+```
+In[10]: r_sq = model.score(x, y) 
+print('coefficient of determination:', r_sq)
+Out[10]:  
+coefficient of determination: 0.8615939258756776
+```
+
+
+
+
