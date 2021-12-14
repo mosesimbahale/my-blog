@@ -5,7 +5,7 @@ date:   2021-12-14 10:30:35
 category: tech
 ---
 
-### introduction: 
+### Introduction: 
 
 The programming requirements of data science demands a very versatile yet flexible language which is simple to write the code but can handle 
 highly complex mathematical processing. Python is most suited for such requirements as it has already established itself both as a language for general 
@@ -46,4 +46,19 @@ The numeric functionality of numpy is orchestrated by two important constituents
 
 EXAMPLE:
 `creating an array`
-Arrays can be created in multiple ways in numpy. A single dimensional array can be created from Python lists using np.array() method as shown below:  
+Arrays can be created in multiple ways in numpy. A single dimensional array can be created from Python lists using np.array() method as shown below:
+
+> In[3]: arr = np.array([1,3,4,5,6]) 
+
+The shape attribute of the array object returns the size of each dimension in the form of (row, columns), while the size returns the total size of the array: 
+
+> In [4]: arr.shape 
+>
+> Out[4]: (5,) 
+
+Unlike Python lists, NumPy arrays can explicitly be multidimensional. A multidimensional array is created as shown below: 
+
+> In[5]: import numpy as np
+>         x = np.array([[1, 2, 3], [4, 5, 6]]) 
+>         print("x:\n{}".format(x)) 
+
