@@ -72,6 +72,7 @@ For large arrays it is more efficient to create arrays from scratch using a bunc
 ![image of creating array](https://user-images.githubusercontent.com/42868535/146039626-fa02df64-f58a-4929-8c9a-e5b00eacba4f.png)
 
 ***np.ones:*** Creates a matrix of specified dimension containing only ones:
+
 ![image of creating np.ones](https://user-images.githubusercontent.com/42868535/146039827-35e7c99b-a309-4c29-b835-f759609e96f5.png)
 
 ***np.arange:*** creates an array filled with a linear sequence, starting at 0, ending at 20, stepping by 2. This is similar to the built-in range() function  
@@ -84,15 +85,21 @@ For large arrays it is more efficient to create arrays from scratch using a bunc
 
 To initialize an array of a specified dimension with random values can be done by using the randn function from the numpy.random package: 
 
-![image of random values]https://user-images.githubusercontent.com/42868535/146040728-414ab46c-dae1-4afa-bc97-e8b050c5f329.png)
+![image of random values](https://user-images.githubusercontent.com/42868535/146040728-414ab46c-dae1-4afa-bc97-e8b050c5f329.png)
 
 3. Pandas Pandas is a Python library for data wrangling and analysis. It is built around a data structure called the DataFrame that is modeled after the R DataFrame i.e. it similar to an Excel spreadsheet. Pandas provides a great range of methods to modify and operate on a table; in particular, it allows SQL-like queries and joins of tables. In contrast to NumPy, which requires that all entries in an array be of the same type, pandas allows each column to have a separate type. Another valuable tool provided by pandas is its ability to ingest from a great variety of file formats and databases, like SQL, Excel files, and comma-separated values (CSV) files.  The following is an example of creating a DataFrame using a dictionary: 
 
 ![image](https://user-images.githubusercontent.com/42868535/146041110-119d1d3c-5ade-4192-a8bb-b274877e201b.png)
 
 
+***Data Processing in Pandas***
 
-
+Using Pandas, you can process data using the following five steps:  
+i) Load 
+ii) Prepare  
+iii) Manipulate  
+iv) Model  
+v) Analyze  
 
 
 
