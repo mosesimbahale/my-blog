@@ -47,8 +47,6 @@ a) Basic Thoughts
 - Representative of behaviorism: behavior control, adaptation, and evolutionary computing.
 
 
-![image](https://user-images.githubusercontent.com/42868535/146173026-6b7c4949-1c18-41fe-bda3-261f1b69c038.png)
-
 
 **Types of AI**
 
@@ -61,3 +59,8 @@ a) Basic Thoughts
 Machine learnig is a core research field of AI, and it is also necessary knowledge for deep learning. Therefore, this chapter mainly introduces the main concept of machine learning,and the common algorithms of machne learning
 
 
+# **Classifications of Intelligent robots**
+Currently,there is no unified defenition of AI research. intelligent robots are generally classified into the following four types:
+
+- Thinking like human beings: Weak AI, such as Watson and AlphaGo
+- Acting like human beings: Weak AI, such as humanoid robot, iRobot, and Atlas of Boston Dynamics  
