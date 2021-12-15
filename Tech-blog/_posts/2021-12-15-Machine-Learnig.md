@@ -46,4 +46,17 @@ a) Basic Thoughts
 
 - Representative of behaviorism: behavior control, adaptation, and evolutionary computing.
 
+
+
+
+**Types of AI**
+
+ **Strong AI** - The strong AI view holds that it is possible to create intelligent machines that can reason and solve problems. Such machines are considered to be conscious and self-aware, can independently think about problems and work out optimal solutions to the problems, have their system of values and world views, and have all the same instincts as living things, such as survival and security needs. It can be regarded the same as a new civilization in a certain sense.
+
+**Weak AI** - The weak AI view holds that intelligent machines cannot reason and solve problems. These machines only look intelligent but do not have real intelligence or self-awareness.
  
+ 
+# Machine learning Defenition:
+Machine learnig is a core research field of AI, and it is also necessary knowledge for deep learning. Therefore, this chapter mainly introduces the main concept of machine learning,and the common algorithms of machne learning
+
+
