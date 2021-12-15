@@ -65,19 +65,34 @@ Since there is no learner that can learn a concept with 100% accuracy, therefore
 
 
 
+# PAC-learnability axis-aligned rectangles 
 
+**Consider an hypothesis to be an axis-aligned rectangles**
 
+Assume C is the real target function. Our goal is to find the best rectangle h that approximates the realtargetfictionC Now hs is the tightest possible rectangle around a set of positive trainin gexamples. 
 
+![image](https://user-images.githubusercontent.com/42868535/146164096-0c3479fc-f937-45d0-a86f-ff375778ecf4.png)
 
+![image](https://user-images.githubusercontent.com/42868535/146164160-d79d9d17-b3fd-4e6b-9015-9224bc3cb17b.png)
 
+Weneedtoshowthatthegeneralizationerrorishighwithprobability.The shaded region represents the error region and I should be bounded by ε. If a hypothesis lies within this shaded region it is deemed to be approximately correct.
 
+![image](https://user-images.githubusercontent.com/42868535/146164254-54862ff6-03b3-4566-aeaa-3f060e118018.png)
 
+`Approximately correct hypothesis`
 
+![image](https://user-images.githubusercontent.com/42868535/146164346-2fb38dfd-5bb1-4690-9d50-4d171a666f4a.png)
 
+`The hypothesis error is greater than ε`
 
+![image](https://user-images.githubusercontent.com/42868535/146164483-f070d161-b0fb-4a69-915c-168710fa738b.png)
 
+![image](https://user-images.githubusercontent.com/42868535/146164532-280150a6-2d1d-47f5-8fa5-3e626aa801f0.png)
 
+![image](https://user-images.githubusercontent.com/42868535/146164558-61e224ff-c574-499c-b124-2bc133a4c0ec.png)
 
+# Conclusion 
 
-
+- PAC learning is used in classification to learn  how we can put a bound on a true error given training error. 
+- In other words, how we can reduce generalizabilityerror but still achieving a high probability. 
 
