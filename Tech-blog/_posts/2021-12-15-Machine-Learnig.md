@@ -8,6 +8,9 @@ category: tech
 # Machine Learning
 
 
+![image](https://user-images.githubusercontent.com/42868535/146173026-6b7c4949-1c18-41fe-bda3-261f1b69c038.png)
+
+
 Relationship between AI, Machine learning, and Deep learning
 
 - AI: A new technical science that focuses on the research and development of theories, methods, techniques, and applications systems for simulating and extending human intelligence.
@@ -27,7 +30,7 @@ a) Basic Thoughts
 - Representative of symbolism: inference, including symbolic inference and machine interface.
 
 
-#####Representative of symbolism: inference, including symbolic inference and machine inference.
+#### Representative of symbolism: inference, including symbolic inference and machine inference.
 
 - The basis of thinking is neurons rather than the process of symbol processing.
 
