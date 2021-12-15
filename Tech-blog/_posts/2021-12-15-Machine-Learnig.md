@@ -47,6 +47,7 @@ a) Basic Thoughts
 - Representative of behaviorism: behavior control, adaptation, and evolutionary computing.
 
 
+![image](https://user-images.githubusercontent.com/42868535/146173026-6b7c4949-1c18-41fe-bda3-261f1b69c038.png)
 
 
 **Types of AI**
