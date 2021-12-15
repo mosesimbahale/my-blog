@@ -20,6 +20,7 @@ Relationship between AI, Machine learning, and Deep learning
 - Deep learning: A new field of machine learning. The concept of deep learning originates from the research on artificial neural networks. The multi-layer perceptron (MLP) is a type of deep learning architecture. Deep learning aims to simulate the human brain to interpret data such as images, sounds, and texts.
 
 Three major schools of thought: Symbolism.
+
 a) Basic Thoughts
 - The cognitive process of human beings is the process of inference and operation of various symbols.
 
