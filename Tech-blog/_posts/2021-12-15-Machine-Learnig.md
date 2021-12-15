@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Principles of data science"
+title:  "Machine Learning"
 date:   2021-12-15 
 category: tech
 ---
 
-# DATA SCIENCE
+# Machine Learning
