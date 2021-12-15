@@ -44,6 +44,29 @@ False Postive is the region that is classified by hypothesis C as positive while
 Since there is no learner that can learn a concept with 100% accuracy, therefore we need a hypothesis that is approximately correct. Therefore, our aim is to reduce the probability of the error region ![image](https://user-images.githubusercontent.com/42868535/146162124-d5c7330b-0dc5-4548-b0a0-9a32b904766a.png) Therefore a hypothesis is said to be approximately correct, if the error is less than or equal to Exponential, where ![image](https://user-images.githubusercontent.com/42868535/146162304-d9c1cc6b-7990-4d67-a938-58322f9d7f72.png)
 
 
+## Probably Approximately Correct (PAC) Learning 
+
+- Since the training samples are drawn randomly, there is always a probability that a training samples encountered by a learner will be misleading.
+- If the samples drawn are not the actual representation of the real instances, the hypothesis generated may not be approximately correct.
+- Therefore for a specific learning algorithm, what is the probability that the concept it learns will have an error that is bounded by ε and whose failure probability is bounded by ![image](https://user-images.githubusercontent.com/42868535/146162746-a085f24e-3a23-4456-aa17-edb61dc3177a.png)
+
+- That is ![image](https://user-images.githubusercontent.com/42868535/146162800-0b567489-8ebe-4b0a-8f30-b5b80e862bb3.png)
+- Hence the goal is to achieve low generalization error with high probability.
+
+![image](https://user-images.githubusercontent.com/42868535/146162935-2892b81c-877d-4400-8939-07aabfd3507b.png)
+
+![image](https://user-images.githubusercontent.com/42868535/146163026-b9cc07ff-dffb-4e75-8fd1-8e2c531138f6.png)
+
+![image](https://user-images.githubusercontent.com/42868535/146163124-f6bff384-6f31-4216-86de-29ae4642ccd4.png)
+
+![image](https://user-images.githubusercontent.com/42868535/146163216-b4f1a0a8-559c-491e-b026-45ccbd567f7a.png)
+
+![image](https://user-images.githubusercontent.com/42868535/146163381-1b813f93-c58f-4ec5-a7c9-5ab5a689087b.png)
+
+
+
+
+
 
 
 
