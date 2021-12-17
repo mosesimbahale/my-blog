@@ -5,7 +5,7 @@ date:   2021-12-15
 category: tech
 ---
 
-# Image processing with machine learning.
+# Introduction: Tensorflow Image processing.
 
 **A summary on Basics of TensorFlow Tutorial Using Fashion MNIST**
 
