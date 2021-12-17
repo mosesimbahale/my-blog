@@ -274,10 +274,10 @@ There you have it! You have built and trained your first neural network from scr
 # Next seps Recommended
 - Try using the model on a item of clothing outside the dataset (make sure to preprocess it first so it is on the same scale as the other images).
 
-- Find another [image dataset](url"https://blog.cambridgespark.com/50-free-machine-learning-datasets-image-datasets-241852b03b49") to try this out on.
+- Find another [image dataset](https://blog.cambridgespark.com/50-free-machine-learning-datasets-image-datasets-241852b03b49) to try this out on.
 
 - Make an interface that responds with a label when you select a clothing image.
 
-A complete source code of this can be found [here](url"https://github.com/mosesimbahale/ML-Projects/blob/main/Image_processing_Tensorflow%20(1).ipynb") 
+A complete source code of this can be found [here](https://github.com/mosesimbahale/ML-Projects/blob/main/Image_processing_Tensorflow%20(1).ipynb) 
 
-Next : [Get Started with Tensorflow] 
+
