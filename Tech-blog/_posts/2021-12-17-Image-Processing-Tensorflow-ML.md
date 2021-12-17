@@ -112,6 +112,12 @@ It's always nice to be able to show that we've actually done something; ever sin
 The first command basically generates a figure object that will be manipulated by commands 2 through 4. Command 2 specifies what it is that we shall be plotting: the first element from the train_images array. NOTE: Recall that python is an inclusive counting language, meaning that it numbers/indexes things starting from zero, not one! And the final command, "show()", tells Python to generate this figure in an external (from CMD) window.
 
 
+
+![image](https://user-images.githubusercontent.com/42868535/146585148-db1a34c5-84c0-43b4-90e2-223f25001913.png)
+
+
+
+
 Your window should contain a plot that looks similar to Figure 3. Also, be aware that after plt.show(), Python will not return you to a command line until the newly generated window (containing our super nice picture) is closed. Upon closing the window, you will be able to continue entering Python commands.
 
 > Figure 3 The graphical output of the above code snip. Note that this is a pixelated ankle boot image in greyscale that has been false-colored.
