@@ -114,3 +114,5 @@ The first command basically generates a figure object that will be manipulated b
 
 Your window should contain a plot that looks similar to Figure 3. Also, be aware that after plt.show(), Python will not return you to a command line until the newly generated window (containing our super nice picture) is closed. Upon closing the window, you will be able to continue entering Python commands.
 
+> Figure 3 The graphical output of the above code snip. Note that this is a pixelated ankle boot image in greyscale that has been false-colored.
+
