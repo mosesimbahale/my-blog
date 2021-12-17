@@ -279,3 +279,5 @@ There you have it! You have built and trained your first neural network from scr
 - Make an interface that responds with a label when you select a clothing image.
 
 A complete source code of this can be found [here](url"https://github.com/mosesimbahale/ML-Projects/blob/main/Image_processing_Tensorflow%20(1).ipynb") 
+
+Next : [Get Started with Tensorflow] 
