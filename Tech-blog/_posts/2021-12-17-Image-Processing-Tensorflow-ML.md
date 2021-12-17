@@ -115,10 +115,13 @@ The first command basically generates a figure object that will be manipulated b
 
 ![image](https://user-images.githubusercontent.com/42868535/146585148-db1a34c5-84c0-43b4-90e2-223f25001913.png)
 
+> Figure 3 The graphical output of the above code snip. Note that this is a pixelated ankle boot image in greyscale that has been false-colored.
 
 
 
 Your window should contain a plot that looks similar to Figure 3. Also, be aware that after plt.show(), Python will not return you to a command line until the newly generated window (containing our super nice picture) is closed. Upon closing the window, you will be able to continue entering Python commands.
 
-> Figure 3 The graphical output of the above code snip. Note that this is a pixelated ankle boot image in greyscale that has been false-colored.
 
+**What a fine looking boot! 👢**
+
+# Lets write a program that will classify this boot
