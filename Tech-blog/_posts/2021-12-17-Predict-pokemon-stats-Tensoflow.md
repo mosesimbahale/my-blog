@@ -127,5 +127,84 @@ This function extracts the data from the DataFrame and puts it into arrays that 
 `train_data, train_labels, test_data, test_labels = label_delineator(df_train, df_test, 'isLegendary')`
 
 
+Now that we have our labels extracted from the data, let's normalize the data so everything is on the same scale:
+
+```
+def data_normalizer(train_data, test_data):
+    train_data = preprocessing.MinMaxScaler().fit_transform(train_data)
+    test_data = preprocessing.MinMaxScaler().fit_transform(test_data)
+    return(train_data, test_data)
+
+train_data, test_data = data_normalizer(train_data, test_data)
+```
+
+Now we can get to the machine learning! Let's create the model using Keras. Keras is an API for Tensorflow. We have a few options for doing this, but we'll keep it simple for now. A model is built upon layers. We'll add two fully connected neural layers.
+
+The number associated with the layer is the number of neurons in it. The first layer we'll use is a 'ReLU' (Rectified Linear Unit)' activation function. Since this is also the first layer, we need to specify `input_size`, which is the shape of an entry in our dataset.
+
+After that, we'll finish with a softmax layer. Softmax is a type of logistic regression done for situations with multiple cases, like our 2 possible groups: 'Legendary' and 'Not Legendary'. With this we delineate the possible identities of the Pokémon into 2 probability groups corresponding to the possible labels:
 
 
+```
+length = train_data.shape[1]
+
+model = keras.Sequential()
+model.add(keras.layers.Dense(500, activation='relu', input_shape=[length,]))
+model.add(keras.layers.Dense(2, activation='softmax'))
+```
+
+
+# **Compile and Evaluate Model**
+
+Once we have decided on the specifics of our model, we need to do two processes: Compile the model and fit the data to the model.
+
+We can compile the model like so:
+`model.compile(optimizer='sgd', loss='sparse_categorical_crossentropy', metrics=['accuracy'])`
+
+Here we're just feeding three parameters to `model.compile.` We pick an optimizer, which determines how the model is updated as it gains information, a loss function, which measures how accurate the model is as it trains, and metrics, which specifies which information it provides so we can analyze the model.
+
+The optimizer we're using is the Stochastic Gradient Descent (SGD) optimization algorithm, but there are others available. For our loss we're using sparse_categorical_crossentropy. If our values were one-hot encoded, we would want to use "categorial_crossentropy" instead.
+
+Then we have the model fit our training data:
+
+
+`model.fit(train_data, train_labels, epochs=400)`
+
+The three parameters `model.fit` needs are our training data, our training labels, and the number of epochs. One epoch is when the model has iterated over every sample once. Essentially the number of epochs is equal to the number of times we want to cycle through the data. We'll start with just 1 epoch, and then show that increasing the epoch improves the results.
+
+# **Test**
+Now that the model is trained to our training data, we can test it against our training data:
+
+```
+loss_value, accuracy_value = model.evaluate(test_data, test_labels)
+print(f'Our test accuracy was {accuracy_value})'
+>>> Our test accuracy was 0.980132
+```
+
+
+
+
+`model.evaluate` will evaluate how strong our model is with the test data, and report that in the form of loss value and accuracy value (since we specified `accuracy` in our `selected_metrics` variable when we compiled the model). We'll just focus on our accuracy for now. With an accuracy of ~98%, it's not perfect, but it's very accurate.
+
+We can also use our model to predict specific Pokémon, or at least have it tell us which status the Pokémon is most likely to have, with `model.predict.` All it needs to predict a Pokémon is the data for that Pokémon itself. We're providing that by selecting a certain `index` of `test_data`:
+
+```
+def predictor(test_data, test_labels, index):
+    prediction = model.predict(test_data)
+    if np.argmax(prediction[index]) == test_labels[index]:
+        print(f'This was correctly predicted to be a \"{test_labels[index]}\"!')
+    else:
+        print(f'This was incorrectly predicted to be a \"{np.argmax(prediction[index])}\". It was actually a \"{test_labels[index]}\".')
+        return(prediction)
+```
+
+
+Let's look at one of the more well-known legendary Pokémon: Mewtwo. He's number 150 in the list of Pokémon, so we'll look at index 149:
+
+```
+predictor(test_data, test_labels, 149)
+>>> This was correctly predicted to be a "1"!
+
+```
+
+Nice! It accurately predicted Mewtwo was a legendary Pokémon.
