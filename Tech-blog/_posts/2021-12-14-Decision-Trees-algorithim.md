@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Machine Learning : Decision trees"
+title:  "Machine Learning :   Algorithms"
 date:   2021-12-14 10:30:35 
 category: tech
 ---
