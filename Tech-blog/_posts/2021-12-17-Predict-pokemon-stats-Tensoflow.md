@@ -79,7 +79,7 @@ This function first uses `pd.get_dummies` to create a dummy DataFrame of that ca
 
 
 # **Recap**
-Reasons why we need a recap
+Reasons why we need to create dummy variables:
 
 - Some categories are not numerical.
 - Converting multiple categories into numbers implies that they are on a scale.
