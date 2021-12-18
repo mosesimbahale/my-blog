@@ -37,9 +37,9 @@ The Python machine learning ecosystem is a collection of libraries that enable t
   
 
 ### Components of Python Machine Learning Ecosystem
-1. Jupyter Notebook - The Jupyter Notebook, formerly known as ipython notebooks is an interactive environment for running code in the browser. It is a great tool for exploratory data analysis and is widely used by data scientists.    
+a.) Jupyter Notebook - The Jupyter Notebook, formerly known as ipython notebooks is an interactive environment for running code in the browser. It is a great tool for exploratory data analysis and is widely used by data scientists.    
 
-2. NumPy - Numpy is the backbone of Machine Learning in Python. It is one of the most important libraries in Python for numerical computations. It’s used in almost all Machine Learning and scientific computing libraries. It stands for Numerical Python and provides an efficient way to store and manipulate multidimensional arrays in Python. Numerical Python and provides an efficient way to store and manipulate multidimensional arrays in Python. Generally, NumPy can also be seen as the replacement of MatLab because NumPy is mostly used along with Scipy (Scientific Python) and Mat-plotlib (plotting library).
+b.) NumPy - Numpy is the backbone of Machine Learning in Python. It is one of the most important libraries in Python for numerical computations. It’s used in almost all Machine Learning and scientific computing libraries. It stands for Numerical Python and provides an efficient way to store and manipulate multidimensional arrays in Python. Numerical Python and provides an efficient way to store and manipulate multidimensional arrays in Python. Generally, NumPy can also be seen as the replacement of MatLab because NumPy is mostly used along with Scipy (Scientific Python) and Mat-plotlib (plotting library).
 
 ***Numpy ndarray*** 
 The numeric functionality of numpy is orchestrated by two important constituents of the numpy package, ndarray and Ufuncs (Universal function).   ndarray (simply arrays or matrices) is a multi-dimensional array object which is the core data container for all of the numpy operations. Mostly an array will be of a single data type (homogeneous) and possibly multi-dimensional.   Universal functions are the functions which operate on ndarrays in an element by element fashion.
@@ -89,7 +89,7 @@ To initialize an array of a specified dimension with random values can be done b
 
 
 
-3. Pandas is a Python library for data wrangling and analysis. It is built around a data structure called the DataFrame that is modeled after the R DataFrame i.e. it similar to an Excel spreadsheet. Pandas provides a great range of methods to modify and operate on a table; in particular, it allows SQL-like queries and joins of tables. In contrast to NumPy, which requires that all entries in an array be of the same type, pandas allows each column to have a separate type. Another valuable tool provided by pandas is its ability to ingest from a great variety of file formats and databases, like SQL, Excel files, and comma-separated values (CSV) files.  The following is an example of creating a DataFrame using a dictionary: 
+c.) Pandas is a Python library for data wrangling and analysis. It is built around a data structure called the DataFrame that is modeled after the R DataFrame i.e. it similar to an Excel spreadsheet. Pandas provides a great range of methods to modify and operate on a table; in particular, it allows SQL-like queries and joins of tables. In contrast to NumPy, which requires that all entries in an array be of the same type, pandas allows each column to have a separate type. Another valuable tool provided by pandas is its ability to ingest from a great variety of file formats and databases, like SQL, Excel files, and comma-separated values (CSV) files.  The following is an example of creating a DataFrame using a dictionary: 
 
 ![image](https://user-images.githubusercontent.com/42868535/146041110-119d1d3c-5ade-4192-a8bb-b274877e201b.png)
 
@@ -148,7 +148,7 @@ df = pd.read_sql(query, conn)
 ```
 conn is an object used to identify the database server information and the type of database to pandas 
 
-4. Matplotlib 
+d.) Matplotlib 
 matplotlib is the primary scientific plotting library in Python. It provides functions for making publication-quality visualizations such as line charts, histograms, scatter plots, etc. Visualizing your data and different aspects of your analysis can give you important insights.   
 When working inside the Jupyter Notebook, you can show figures directly in the browser by using the %matplotlib notebook and %matplotlib inline commands. 
 
@@ -172,7 +172,7 @@ plt.plot(x, y, marker="x")
 
 
 
-5. SciPy 
+e.) SciPy 
 
 SciPy is a collection of functions for scientific computing in Python. It provides, among other functionality, advanced linear algebra routines, mathematical function optimization, signal processing, special mathematical functions, and statistical distributions. scikit-learn draws from SciPy’s collection of functions for implementing its algorithms. One of the most important part of SciPy is scipy.sparse, which provides sparse matrices, which are another representation that is used for data in scikitlearn. Sparse matrices are used whenever we want to store a 2D array that contains mostly zeros. 
 
@@ -196,7 +196,7 @@ SciPy sparse CSR matrix:
 ```
 
 
-6. Scikit-learn 
+f.) Scikit-learn 
 Scikit-learn is one of the most important and indispensable Python frameworks for Data Science and Machine Learning in Python. It is built on top of the NumPy and SciPy scientific Python libraries and implements a wide range of Machine Learning algorithms covering major areas of Machine Learning like classification, clustering, regression, etc. All the mainstream Machine Learning algorithms like support vector machines, logistic regression, random forests, K-means clustering, hierarchical clustering, etcs are implemented efficiently in this library. Perhaps this library forms the foundation of applied and practical Machine Learning. Besides this, its easy-to-use API and code design patterns have been widely adopted across other frameworks. 
 
 
@@ -262,15 +262,15 @@ plt.scatter(x, y);
 With this data, you can use the steps outlined for the Scikit-Learn estimator API above: 
 
 
-1. **Choose a class of model.**  In Scikit-Learn, every class of model is represented by a Python class. E.g., for a simple linear regression model, you import the linear regression class as shown below: `In[2]: from sklearn.linear_model import LinearRegression` 
+- **Choose a class of model.**  In Scikit-Learn, every class of model is represented by a Python class. E.g., for a simple linear regression model, you import the linear regression class as shown below: `In[2]: from sklearn.linear_model import LinearRegression` 
 
-2. **Choose model hyper parameters.** Depending on the model class you are working with, you might need to consider one or more of the following options:
-- Would you like to fit for the offset (i.e., intercept)?  
-- Use fit_intercept  (True by default) that decides whether to calculate the intercept 푏₀ (True) or consider it equal to zero (False).
-- Would you like the model to be normalized? Use normalize (False by default) that decides whether to normalize the input variables (True) or not (False).  
-- Would we like to pre-process the features to add model flexibility? 
-- What degree of regularization would we like to use in the model?  
-- How many model components would we like to use?
+- **Choose model hyper parameters.** Depending on the model class you are working with, you might need to consider one or more of the following options:
+ - Would you like to fit for the offset (i.e., intercept)?  
+ - Use fit_intercept  (True by default) that decides whether to calculate the intercept 푏₀ (True) or consider it equal to zero (False).
+ - Would you like the model to be normalized? Use normalize (False by default) that decides whether to normalize the input variables (True) or not (False).  
+ - Would we like to pre-process the features to add model flexibility? 
+ - What degree of regularization would we like to use in the model?  
+ - How many model components would we like to use?
  
 These are important choices that must be made once the model class is selected. These choices are often represented as hyperparameters, or parameters that must be set before the model is fit to data. This is done when you choose hyperparameters by passing values at model instantiation. For  instance, you can specify you would like to fit the intercept using the fit_intercept hyperparameter: 
 
@@ -282,7 +282,7 @@ Out[3]: LinearRegression()
 ```
 >Notice that when the model is instantiated, the only action is the storing of the hyperparameter values. In particular, the model has not yet been applied to any data 
 
-3. **Arrange data into a features matrix and target vector.** 
+- **Arrange data into a features matrix and target vector.** 
 Scikit-Learn data representation, requires a two-dimensional features matrix and a one-dimensional target array. The target variable y is in the correct form (length-n_sample array), but you need to reshape data x into one-dimensional array i.e. make it a matrix of size [n_samples, n_features]. 
 
 ``` 
@@ -291,7 +291,7 @@ X.shape
 Out[4]: (40, 1) 
 ```
 
-4. **Fit the model to your data.** 
+- **Fit the model to your data.** 
 Apply the model to data. This can be done with the fit() method of the model as follows: 
 
 ```
@@ -310,7 +310,7 @@ Out[7]: -1.139509001948376
 These two parameters represent the slope and intercept of the simple linear fit to the data.
 
 
-5. **Predict labels for unknown data.**
+- **Predict labels for unknown data.**
 Once the model is trained, the main task of supervised machine learning is to evaluate it based on what it says about new data that was not part of the training set. In Scikit-Learn, this can done by using the predict() method. In this example, the “new data” will be a grid of x values, and we will need to know what y values the model predicts: 
 `In[8]: xfit = np.linspace(-1, 11, 40) `
 
@@ -333,7 +333,7 @@ plt.ylabel("yfit");
 
 
 
-6. Check the results of model fitting to know whether the model is satisfactory 
+- Check the results of model fitting to know whether the model is satisfactory 
 
 Typically one evaluates the efficacy of the model by comparing its results to some known baseline.
 

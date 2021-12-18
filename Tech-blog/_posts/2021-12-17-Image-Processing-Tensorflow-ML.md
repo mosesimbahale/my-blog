@@ -19,8 +19,7 @@ The Fashion MNIST dataset is comprised of 70,000 grayscale images of articles of
 
 ## Gettng started
 
-STEP O1: INSTALL PYTHON:
-
+**STEP O1: INSTALL PYTHON:**
 As a first step, let's make sure Python is installed and running. To test if it is installed and configured already, type python into your terminal. If it isn't installed yet, it should say something like "python is a unknown command". If it is installed, it will open the python environment, and should look something like this:
 
 ```
@@ -71,9 +70,8 @@ TensorFlow is only used for Neural Networks: TensorFlow is a more general tool f
 
 
 
-STEP O2: 
+**STEP O2:**
 ## **Loading dataset:**
-
 Now we are ready to roll! First, we must admit that it takes a lot of data to train a NN, and 70,000 examples is an anemic dataset. So instead of doing a more traditional 70/20/10 or 80/10/10 percent split between training/validating/testing, we will do a simple 6:1 ratio of training:testing (note that this is not best practices, but when there is limited data it may be your only recourse).
 
 
@@ -94,9 +92,8 @@ Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-dataset
 
 The first line merely assigns the name fashion_mnist to a particular dataset located within Keras' dataset library. The second line defines four arrays containing the training and testing data, cleaved again into separate structures for images and labels, and then loads all of that data into our standup of Python. The training data arrays will be used to --you guessed it-- train the model, and the testing arrays will allow us to evaluate the performance of our model.
 
-STEP O3: 
+**STEP O3:** 
 # VISUALIZE THE DATA
-
 It's always nice to be able to show that we've actually done something; ever since kindergarten there has been no better way than with a picture! You'll note that we pip installed and imported MatPlotLib, a library for plots and graphs. Here we'll use it to visualize an example of the Fashion MNIST dataset.
 
 ```
@@ -130,7 +127,7 @@ Your window should contain a plot that looks similar to Figure 3. Also, be aware
 
 
 
-STEP O4: 
+**STEP O4:** 
 **Preprocesing the dataset**
 The greyscale assigned to each pixel within an image has a value range of 0-255. We will want to flatten (smoosh… scale…) this range to 0-1. To achieve this flattening, we will exploit the data structure that our images are stored in, arrays. You see, each image is stored as a 2-dimensional array where each numerical value in the array is the greyscale code of particular pixel. Conveniently, if we divide an entire array by a scalar we generate a new array whose elements are the original elements divided by the scalar.
 
@@ -149,9 +146,8 @@ Two vital notes about the above.
 **Remember, the label arrays are only used to associate images with their lables.**
 
 
-STEP O5: 
+**STEP O5:** 
 # **Model generation**
-
 Every NN is constructed from a series of connected layers that are full of connection nodes. Simple mathematical operations are undertaken at each node in each layer, yet through the volume of connections and operations, these ML models can perform impressive and complex tasks.
 
 Our model will be constructed from 3 layers. The first layer – often referred to as the Input Layer – will intake an image and format the data structure in a method acceptable for the subsequent layers. In our case, this first layer will be a Flatten layer that intakes a multi-dimensional array and produces an array of a single dimension, this places all the pixel data on an equal depth during input. Both of the next layers will be simple fully connected layers, referred to as Dense layers, with 128 and 10 nodes respectively. These fully connected layers are the simplest layer in the sense of understanding, yet allow for the greatest number of layer-to-layer connections and relationships.
@@ -172,11 +168,8 @@ Call initializer instance with the dtype argument instead of passing it to the c
 **Softmax activation not only flattens each value (between 0 and 1) but also scales everything to add up to 1.**
 
 
-STEP O6: 
-
+**STEP O6:** 
 # Training the model:
-
-
 Models must be both compiled and trained prior to use. When compiling we must define a few more parameters that control how models are updated during training (optimizer), how the model's accuracy is measured during training (loss function), and what is to be measured to determine the model's accuracy (metrics). These values were selected for this project, yet are generally dependent on the model's intent and expected input and output.
 
 
@@ -218,11 +211,9 @@ This single line completes the entire job of training our model, but let's take 
 
 
 
-STEP O7: 
+**STEP O7:** 
 # **Evaluating Our Model**
-
 ***Recap:***
-
 Now we are working with a functional and trained NN model. Following our logic from the top, we have built a NN that intakes a (28,28) array, flattens the data into a (784) array, compiled and trained 2 dense layers, and the softmax activation function of the final output layer will provide a probability that the image belongs to each of the 10 label categories.
 
 Our model can be evaluated by using the model.evaluate command, that takes in the images and labels so that it can compare its predictions to the ground truth provided by the labels. Model.evaluate provides two outputs, the value of the loss function over the testing examples, and the accuracy of the model over this testing population. The important output for us is the model's accuracy.
