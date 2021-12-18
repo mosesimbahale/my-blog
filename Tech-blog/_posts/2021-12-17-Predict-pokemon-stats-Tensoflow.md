@@ -5,6 +5,8 @@ date:   2021-12-17
 category: tech
 ---
 
+![image](https://user-images.githubusercontent.com/42868535/146635309-7a94db40-7136-41c2-86da-fc8e30da9f2f.png)
+
 
 Welcome to the world of machine learning with TensorFlow! Working with TensorFlow can seem intimidating at first, but this tutorial will start with the basics to ensure you have a strong foundation with the package. This tutorial will be focusing on classifying and predicting Pokémon, but the elements discussed within it can certainly be helpful when using TensorFlow for other ideas, as well. Without further ado, let's begin!
 
