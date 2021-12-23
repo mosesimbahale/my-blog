@@ -5,9 +5,9 @@ date:   2021-12-15
 category: tech
 ---
 
-# Introduction: Tensorflow Image processing.
 
-**A summary on Basics of TensorFlow Tutorial Using Fashion MNIST**
+
+**A summary on Basics of TensorFlow Using Fashion MNIST**
 
 Machine learning (ML)/Neural Network (NN) tools have recently made a huge splash with applications in data analysis, image classification, and data generation. Although ML methods have existed for decades, recent advancements in hardware have generated systems powerful enough to run these algorithms.
 
