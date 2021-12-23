@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Statistical Learning Theory"
+title:  "ML: Statistical Learning Theory"
 date:   2021-12-15 
 category: tech
 ---

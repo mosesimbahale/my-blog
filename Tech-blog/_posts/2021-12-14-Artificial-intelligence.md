@@ -13,3 +13,4 @@ Humans are often involved in complex situations.  In business, executives face c
 Humans continually make decisions under uncertainty – that is, with partial or even inaccurate, information. AI systems can handle such situations in many contexts.
 
 Everyday humans receive masses of incoming information.  People can screen the information and discard irrelevant information – a skill built through experience.  Computers are limited by their programming – and it’s not easy to program a computer to know what’s irrelevant.
+
