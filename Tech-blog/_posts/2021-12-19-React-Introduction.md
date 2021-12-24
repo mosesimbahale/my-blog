@@ -32,7 +32,7 @@ This is where most of your code will go. You'll notice we have `App.jsx` along w
 1. Open your terminal
 - If you're using a Windows operating system, we recommend downloading and using git bash as your terminal
 2. Change directories into a location where you want to keep this project
-3. Clone this repository: git clone `https://github.com/mosesimbahale/intro-react`
+3. Clone this repository: git clone `link`
 4. Move into the repository's directory: `cd intro-react`
 5. Checkout to the `changes` branch: `git checkout changes`
 6. Open the `intro-react` folder in your favorite text editor
@@ -46,4 +46,21 @@ Your browser should automatically open `http://localhost:3000/`, and you should 
 You'll see that our app can't really do anything! All we have is three buttons! We are going to add all the functionality.
 
 **⌨️ Activity: Open a Pull Request**
+
+
+## **Building Blocks of Life Apps - Components**
+
+In the Pull Request you will:
+
+Add components
+Pass data to child components
+Create and use state variables
+Use callback functions to communicate data
+First, we'll learn about components.
+
+**Components**
+
+Components are the building blocks of React apps. Think of components as different parts of the app. Each button is a component, each paragraph of text is a component, and so on. From html, you might recognize some of the built in components like `<div />` and `<li />`. In React, we can create our own components! How cool is that?
+
+Components in `src/App.jsx`
 
