@@ -81,3 +81,7 @@ Scroll down to add a header component.
 ## **Step 02: Adding components**
 
 Let's add a child component and give our app a header. At the end of the step, your app should like the following:
+
+![image](https://user-images.githubusercontent.com/42868535/147341522-f197a8a1-dc08-4f98-9155-22124ca2b7c2.png)
+
+
