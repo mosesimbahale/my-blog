@@ -63,4 +63,5 @@ First, we'll learn about components.
 Components are the building blocks of React apps. Think of components as different parts of the app. Each button is a component, each paragraph of text is a component, and so on. From html, you might recognize some of the built in components like `<div />` and `<li />`. In React, we can create our own components! How cool is that?
 
 Components in `src/App.jsx`
+![image](https://user-images.githubusercontent.com/42868535/147341054-d6aadf4e-d7f8-4743-b857-08e8d00bba87.png)
 
