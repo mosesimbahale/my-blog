@@ -64,7 +64,9 @@ Components are the building blocks of React apps. Think of components as differe
 
 Components in `src/App.jsx`
 
-![image](https://user-images.githubusercontent.com/42868535/147341054-d6aadf4e-d7f8-4743-b857-08e8d00bba87.png)
+
+![image](https://user-images.githubusercontent.com/42868535/147342823-c7c3e28f-02e9-4222-a89e-3d5eb74fc5cb.png)
+
 
 In our solution, our assignments page looks like the above. The overall webpage is a component called App. Inside `App` there are other components like buttons, titles, and custom components that we can create (like the Assginments List)
 
@@ -82,7 +84,8 @@ Scroll down to add a header component.
 
 Let's add a child component and give our app a header. At the end of the step, your app should like the following:
 
-![image](https://user-images.githubusercontent.com/42868535/147341522-f197a8a1-dc08-4f98-9155-22124ca2b7c2.png)
+![image](https://user-images.githubusercontent.com/42868535/147342970-4dd4dcac-bf54-4552-bb31-42dc6cbf0fa3.png)
+
 
 
 **⌨️ Activity: Add an h3 component to src/App.jsx**
