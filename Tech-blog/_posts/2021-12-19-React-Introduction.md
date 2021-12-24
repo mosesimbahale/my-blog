@@ -63,5 +63,21 @@ First, we'll learn about components.
 Components are the building blocks of React apps. Think of components as different parts of the app. Each button is a component, each paragraph of text is a component, and so on. From html, you might recognize some of the built in components like `<div />` and `<li />`. In React, we can create our own components! How cool is that?
 
 Components in `src/App.jsx`
+
 ![image](https://user-images.githubusercontent.com/42868535/147341054-d6aadf4e-d7f8-4743-b857-08e8d00bba87.png)
 
+In our solution, our assignments page looks like the above. The overall webpage is a component called App. Inside `App` there are other components like buttons, titles, and custom components that we can create (like the Assginments List)
+
+Take a look at the following line in `src/App.jsx.`
+
+```
+class App extends React.Component
+```
+
+This line takes a component's properties to create a component named "App". In the `render` method of App, there are other components like `<button/>.` These components are child components because they are all a part of its parent, `App`.
+
+Scroll down to add a header component.
+
+## **Step 02: Adding components**
+
+Let's add a child component and give our app a header. At the end of the step, your app should like the following:
