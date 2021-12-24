@@ -86,3 +86,23 @@ Let's add a child component and give our app a header. At the end of the step, y
 
 
 **⌨️ Activity: Add an h3 component to src/App.jsx**
+
+1. In src/App.jsx, replace line 92 with this header component:
+
+```
+<h3 className="Box-title d-flex flex-justify-center">GradeBook</h3>
+
+```
+2. Save your file
+3. To run the code, move inside the repository directory in your terminal and run `npm start`
+4. Exit the process in your terminal using Ctrl + C
+5. Stage, commit, and push your code to the changes branch:
+
+```
+git add src/App.jsx
+git commit -m "add a header component"
+git push
+
+```
+
+
