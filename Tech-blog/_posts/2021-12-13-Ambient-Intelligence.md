@@ -29,6 +29,9 @@ Wireless Entertainment: Entertainment gadgets and electronics are usually the fi
 
 Smart Security: Home security products like doorbell cameras, security cameras, and motion detectors are all available with built-in connectivity. They allow you to monitor your home no matter where you are. The Ring doorbell is gaining in popularity because it lets people see who is at their door without having to open it. Police are finding it useful in solving crimes as well. The videos catch porch pirates and record car crashes that are used later to catch criminals.
 
+
+
+
 ### Components of a smart home:
 
 Sensors: Tiny, inexpensive beacons that incorporate Bluetooth Low Energy (BLE) to transmit signals as part of a smart home platform
@@ -39,7 +42,10 @@ Ambient Intelligence (AmI): AmI weaves together data from many sources to "learn
 
 Wireless Communications: Mobile, Wi-Fi, Bluetooth and energy-saving communication protocols enable anytime/anywhere connectivity
 
-Human-Computer Interaction (HCI): The capacity of intelligent, intuitive interfaces embedded in everyday objects to respond to end
+Human-Computer Interaction (HCI): The capacity of intelligent, intuitive interfaces embedded in everyday objects to respond to end.
+
+
+
 
 ### Challenges of Ami in homes.
 
@@ -55,9 +61,7 @@ A potential drawback of existing Smart Homes technology is the need for the user
 
 
 
-###What's Next For the Smart Home?
-
-
+### What's Next For the Smart Home?
 The current smart home market is not only diffuse with competing visions, it's also hampered by interoperability issues and an overall lack of standardization.
 
 Industry watchers and analysts believe the key to the success of the market hinges less on a particular device and more on the connectivity platform all of the major players agree to buy into. The value is in increased simplicity, not more complexity.
