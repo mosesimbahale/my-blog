@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Ambient intelligence and smart homes"
+title:  "Ambient Intelligence and smart homes"
 date:   2021-12-13 10:30:35 
 category: tech
 ---
