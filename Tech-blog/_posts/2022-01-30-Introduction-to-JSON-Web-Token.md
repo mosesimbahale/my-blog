@@ -145,3 +145,4 @@ const JWT = encodedHeader + "." + encodedPayload + "." + signature;
 
 ```
 
+##### How JWT secures our data
