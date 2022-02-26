@@ -145,7 +145,7 @@ This is the directory structure for our Node.js Express & MongoDB application:
 
 
 
-### Front-end with React, React Roter
+### Front-end with React, React Router
 ##### Overview
 
 Let's look at the diagram below

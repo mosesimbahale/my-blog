@@ -11,16 +11,7 @@ For using any website, mobile app or desktop app.. you almost always need an acc
 
 So how do we authenticate an account?
 
-<<<<<<< Updated upstream
-First, we are goint to take a look at a simple method that is popularly used in many websites: ***Session-based authentication***
-
-![image](https://user-images.githubusercontent.com/42868535/151693443-e583a43f-f93b-4182-a486-db883063d836.png)
-
-
-![image](https://user-images.githubusercontent.com/42868535/151693460-0ed7c836-ed29-4a44-b32b-09229a0b4265.png)
-=======
 First, we are going to take a look at a simple method that is popularly used in many websites: ***Session-based authentication***
->>>>>>> Stashed changes
 
 
 In the image above,when a user logs into a website, the server will generate a `session` for that user and store it(in memory or database). Server also returns a `sessionId` for the client to save it in browser cookie.
@@ -146,3 +137,28 @@ const JWT = encodedHeader + "." + encodedPayload + "." + signature;
 ```
 
 ##### How JWT secures our data
+JWT Does not secure your data.
+
+JWT does not hide, obscure, secure data at all. You can see that the process of generating  JWT(Header, Payload, Signature) only encode and hash data, not encrypt data.
+
+
+So, what if there is a `Man-in-the-middle attack` that can getJWT, then decode user information? Yes, that is possible, so always make sure that your application has the HTTPS encryption.
+
+##### Hoe Server validates JWT from client
+
+In previous section, we use a secret string to create signature. This secret string is unique for every application and must be stored securely in the server side.
+
+When receiving JWT from client, the server get the signature,verify taht the signature is correctly hashed by the same algorithm and secret string as above. If it matches the server's signature, the JWT is valid.
+
+##### **Important**
+Experienced programmers can still add or edit payload information when sending it to the server. What should we do in this case?
+We store the token before sending i to the client. It can ensure hat the JWT transmitted later later by the client is valid.
+
+In addition, saving the user's token on the server will also benefit the **force logout** 
+
+
+##### **Conclusion**
+There will never be a best method for authentication. It depends on the use case and how you want to implemen.
+
+However, for app that you want to scale to a large number of users across many platform, JWT authentication is preferred because the token will be stored on the client side.
+
