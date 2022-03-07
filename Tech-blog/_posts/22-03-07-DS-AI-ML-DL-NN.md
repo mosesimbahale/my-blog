@@ -26,4 +26,9 @@ Additionally, you can reuse the model by feeding different training datato addre
 
 
 #### Advantages of using machine learning
+In contrast to traditional programming, where programmers think logically and mathematically, machine learning involves training systems that make observations about complex data. The systems use statistics to update their understanding of the hidden patterns in the data. This shift in thinking provides machine learning several advantages.
+
+- **Decrease in programming time** : Consider the problem of image recognition. while a traditional programmer might spend weeks coding the different explicit rules needed to recognize an image, they might end up with an algorithm that works onlyin certain situations while failing in others. You can solve the same problem in a fraction of the time required by using machine learning, where many sample images of the object are fed to a model to get reliable answers.
+
+
 
