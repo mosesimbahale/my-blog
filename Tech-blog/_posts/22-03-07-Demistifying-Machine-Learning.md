@@ -38,3 +38,6 @@ In unsupervised learning, the example data provided to the model is unlabeled. Y
 #### Reinforcement learning
 
 Reinforcement learning is a relatively new area of machine learning where the model takes actions to achieve a goal while maximizing a reward that is defined. This system relies on trial and error with accurate “trials” providing rewards. The system undergoes many iterations to find a combination of rules that achieves the best results. The applications of reinforcement learning include gaming, robotics, and scientific research.
+
+
+#### Summary
