@@ -26,4 +26,15 @@ Train the model using a machine learning algorithm to learn a line that can sepa
 Have the model classify a fruit that it has not seen before as an apple or an orange by predicting what side of the line it will be.
 
 
-#### Modle performance
+#### Model performance
+The model will initially, and frequently be wrong but will use the labels provided during training to correct itself and arrive at the right answer. The model will also perform only as well as the data used to train it. For instance, if you train it using only green apples as examples, the model will only recognize green apples as apples and may struggle with red or yellow ones. The more diverse and labeled your data, the better your model will perform!
+
+
+
+**Unsupervised Learning**
+In unsupervised learning, the example data provided to the model is unlabeled. You may roughly know the number of classes you expect to discover from the data. The model attempts to find related data and clusters them together. Unsupervised learning is especially useful when dealing with datasets that are difficult to label. An everyday use case for unsupervised learning is recommendation engines commonly found in retail websites, where the system clusters people with similar shopping habits to recommend new products. 
+
+
+#### Reinforcement learning
+
+Reinforcement learning is a relatively new area of machine learning where the model takes actions to achieve a goal while maximizing a reward that is defined. This system relies on trial and error with accurate “trials” providing rewards. The system undergoes many iterations to find a combination of rules that achieves the best results. The applications of reinforcement learning include gaming, robotics, and scientific research.
