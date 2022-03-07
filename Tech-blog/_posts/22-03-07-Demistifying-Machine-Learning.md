@@ -14,3 +14,16 @@ Supervised learning aims to learn from the examples and generalizes its learning
 
 
 Let’s understand how you can use Supervised Learning to train a model to categorize fruits into apples or oranges. 
+
+
+#### Step 01
+Provide numerical input data representing fruits and their labels. 
+
+#### Step 02
+Train the model using a machine learning algorithm to learn a line that can separate the two types of fruit.
+
+#### Step 03
+Have the model classify a fruit that it has not seen before as an apple or an orange by predicting what side of the line it will be.
+
+
+#### Modle performance
