@@ -18,3 +18,12 @@ Machine learning is a subfield of artificial intelligence. Itistheimplementation
 ##### Consider the usecase where you want to automatespam detection:
 -> A traditional programming approach would be to formulate explicit rules for the program. In contrast, A machine learning program would learn by looking at millions of comments that have already been labeled as spam or not spam. The system would then attempt to categorize new(and previously unseen) comments ass spam or not spam based on what it has learned by finding waht words are statistically significant.
 
+
+
+#### Traditional Programming vs Machine Learning Programs
+Additionally, you can reuse the model by feeding different training datato address a new use case! It is the reusability that makes machine learning so powerful since you do not need to change the code each time you change the application.
+
+
+
+#### Advantages of using machine learning
+
