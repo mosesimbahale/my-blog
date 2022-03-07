@@ -15,8 +15,8 @@ A type of artificial intelligence that can perform one(or few) defined tasks wel
 #### Machine learning(ML)
 Machine learning is a subfield of artificial intelligence. Itistheimplementation of theactual program that learns from prior experience to find patterns in a dataset. This paradigm contrasts traditional programming, where you hand-code rules to process data and arrive at answers.
 
-##### Consider the usecase where you want to automatespam detection:
--> A traditional programming approach would be to formulate explicit rules for the program. In contrast, A machine learning program would learn by looking at millions of comments that have already been labeled as spam or not spam. The system would then attempt to categorize new(and previously unseen) comments ass spam or not spam based on what it has learned by finding waht words are statistically significant.
+#### Consider the usecase where you want to automatespam detection:
+ A traditional programming approach would be to formulate explicit rules for the program. In contrast, A machine learning program would learn by looking at millions of comments that have already been labeled as spam or not spam. The system would then attempt to categorize new(and previously unseen) comments ass spam or not spam based on what it has learned by finding waht words are statistically significant.
 
 
 
