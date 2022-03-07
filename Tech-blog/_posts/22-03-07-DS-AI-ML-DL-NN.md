@@ -37,3 +37,32 @@ In contrast to traditional programming, where programmers think logically and ma
 
 
 
+#### Deep Learning
+Deep learning is a machine learning algorithm that involves Deep Neural Networks (DNN) code structures arranged in layers that mimic low scietists believe the human brain works learning patterns of patterns as you go further down the layers.
+
+For instance, a deep neural network may learn to recognize the content of images as shown in figure below
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Layer 1** The firstlayer may detect only lines and edges.
+
+**Layer 2** The second layer may combine the data from the forst layer to detect shapes at a deeper level
+
+**Layer 3**
+ The third layer might combine shapes to detect objects by understandingtheir relative positiont to eachother
+
+
+ #### Relationship between AI, ML & DL
+
+ 
