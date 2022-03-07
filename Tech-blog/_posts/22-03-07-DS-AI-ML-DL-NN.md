@@ -31,4 +31,9 @@ In contrast to traditional programming, where programmers think logically and ma
 - **Decrease in programming time** : Consider the problem of image recognition. while a traditional programmer might spend weeks coding the different explicit rules needed to recognize an image, they might end up with an algorithm that works onlyin certain situations while failing in others. You can solve the same problem in a fraction of the time required by using machine learning, where many sample images of the object are fed to a model to get reliable answers.
 
 
+- **Customization** : You can customize machine learning models for diverse groups of users. Amachine learning model that recognizes one type of object can easily be retrained with sample images of another kind, allowing the programmer to develop solutions at super speed!
+
+- **Complex problems** : Consider solving problems that require face recognition or text toxicity detection. these are complex problems to codesince they require defining hundreds or thousands of rules, yetthese problems arerelatively simple for machine learning model to figure out.
+
+
 
