@@ -62,13 +62,11 @@ For instance, a deep neural network may learn to recognize the content of images
 **Layer 3**
  The third layer might combine shapes to detect objects by understandingtheir relative positiont to eachother
 
-
- #### Relationship between AI, ML & DL
+#### Relationship between AI, ML & DL
 
  Artificial intelligence, the process of enabling human intelligence in system, has a subset called machine learning which is the actual implementation of a program that can learn from data. Deep learning is a class of algorithms tha can drive a machine learning program.
 
-
- #### Application of Machine learning:
- 1. Computer vision 
- - Object Detection: identifying the location of objects in an image.
- - Image recognition : Detect what exists in an image.
+#### Application of Machine learning:
+1. Computer vision 
+- Object Detection: identifying the location of objects in an image.
+- Image recognition : Detect what exists in an image.
