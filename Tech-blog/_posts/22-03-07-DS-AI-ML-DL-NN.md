@@ -70,3 +70,17 @@ For instance, a deep neural network may learn to recognize the content of images
 1. Computer vision 
 - Object Detection: identifying the location of objects in an image.
 - Image recognition : Detect what exists in an image.
+
+
+2. Numerical prediction
+- Regression : Predicting a numerical value from other numerical inputvalues, for instance,predicting housing values, for instance, predicting housing prices based on square footage.
+
+3. Natural Language
+- Test Toxicity/Sentiment: Detecting spam in comments and toxicity in posts, understanding sentiments in posts, summarizing texts, and translating between languages.
+
+4. Audio 
+- Speech Recognition:Digital assistants, web Speech APIs
+
+
+5. Generative
+- Style Transfer/Creative: Generating realistic images of human faces or transforming human voices into musial instruments.
